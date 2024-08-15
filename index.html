@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPAWNPOINT</title>
+    <title>.localspawn</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         header {
-            background-color: #007BFF;
+            background-color: #333333;
             color: #fff;
             padding: 20px;
             text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: calc(100% - 400px); /* 200px padding on each side */
-            padding: 0 200px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: calc(100% - 50px); /* 200px padding on each side */
+            padding: 0 100px;
             box-sizing: border-box;
         }
         .container {
@@ -34,7 +41,7 @@
         .button {
             display: inline-block;
             padding: 10px 20px;
-            margin: 10px;
+            margin: 5px;
             font-size: 16px;
             color: #fff;
             border: none;
@@ -49,6 +56,13 @@
         .green { background-color: #7FBA00; }
         .blue { background-color: #00A4EF; }
         .yellow { background-color: #FFB900; }
+        @media (max-width: 1200px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+                padding: 0 20px;
+                max-width: 100%;
+            }
+        }
         @media (max-width: 800px) {
             .grid {
                 grid-template-columns: 1fr;
@@ -60,36 +74,37 @@
                 width: 100%;
                 box-sizing: border-box;
             }
-        }
-        nav {
-            margin: 20px 0;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
+            .menu-icon {
+                display: flex;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>SPAWNPOINT</h1>
-    </header>
-    <nav id="menu">
-        <!-- Menu items will be inserted here by JavaScript -->
-    </nav>
+<br><br><br>
     <div class="grid">
         <div class="container" id="container1">
             <h2>Container 1</h2>
             <a href="URL1" class="button red">Button 1</a>
             <a href="URL2" class="button red">Button 2</a>
+            <a href="URL1" class="button red">Button 1</a>
+            <a href="URL2" class="button red">Button 2</a>
+            <a href="URL1" class="button red">Button 1</a>
+            <a href="URL2" class="button red">Button 2</a>
         </div>
         <div class="container" id="container2">
             <h2>Container 2</h2>
-            <a href="URL3" class="button green">Button 3</a>
-            <a href="URL4" class="button green">Button 4</a>
+            <a href="URL1" class="button red">Button 1</a>
+            <a href="URL2" class="button red">Button 2</a>
+            <a href="URL1" class="button red">Button 1</a>
+            <a href="URL2" class="button red">Button 2</a>
+            <a href="URL1" class="button red">Button 1</a>
+            <a href="URL2" class="button red">Button 2</a>
+            <a href="URL2" class="button red">Button 2</a>
+            <a href="URL1" class="button red">Button 1</a>
+            <a href="URL2" class="button red">Button 2</a>
+            <a href="URL1" class="button red">Button 1</a>
+            <a href="URL2" class="button red">Button 2</a>
         </div>
         <div class="container" id="container3">
             <h2>Container 3</h2>
@@ -101,21 +116,31 @@
             <a href="URL7" class="button yellow">Button 7</a>
             <a href="URL8" class="button yellow">Button 8</a>
         </div>
+        <div class="container" id="container5">
+            <h2>Container 5</h2>
+            <a href="URL9" class="button red">Button 9</a>
+            <a href="URL10" class="button red">Button 10</a>
+        </div>
+        <div class="container" id="container6">
+            <h2>Container 6</h2>
+            <a href="URL11" class="button green">Button 11</a>
+            <a href="URL12" class="button green">Button 12</a>
+        </div>
+        <div class="container" id="container7">
+            <h2>Container 7</h2>
+            <a href="URL13" class="button blue">Button 13</a>
+            <a href="URL14" class="button blue">Button 14</a>
+        </div>
+        <div class="container" id="container8">
+            <h2>Container 8</h2>
+            <a href="URL15" class="button yellow">Button 15</a>
+            <a href="URL16" class="button yellow">Button 16</a>
+        </div>
+        <div class="container" id="container9">
+            <h2>Container 9</h2>
+            <a href="URL17" class="button red">Button 17</a>
+            <a href="URL18" class="button red">Button 18</a>
+        </div>
     </div>
-    <script>
-        // JavaScript to dynamically create the menu based on container titles
-        document.addEventListener('DOMContentLoaded', function() {
-            const menu = document.getElementById('menu');
-            const containers = document.querySelectorAll('.container');
-            containers.forEach(container => {
-                const title = container.querySelector('h2').textContent;
-                const id = container.id;
-                const menuItem = document.createElement('a');
-                menuItem.href = `#${id}`;
-                menuItem.textContent = title;
-                menu.appendChild(menuItem);
-            });
-        });
-    </script>
-</body>
+    </body>
 </html>
