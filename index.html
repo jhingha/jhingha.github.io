@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spawn</title>
+    <title>Responsive Minimalistic Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
+        }
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
         }
         .grid {
             display: grid;
@@ -59,46 +61,61 @@
                 box-sizing: border-box;
             }
         }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>SPAWNPOINT</h1>
+    </header>
+    <nav id="menu">
+        <!-- Menu items will be inserted here by JavaScript -->
+    </nav>
     <div class="grid">
-        <div class="container">
-            <h2>Links</h2>
-            <a href="URL1" class="button red">Button 1</a>
-            <a href="URL2" class="button red">Button 2</a>
-            <a href="URL1" class="button red">Button 1</a>
-            <a href="URL2" class="button red">Button 2</a>
+        <div class="container" id="container1">
+            <h2>Container 1</h2>
             <a href="URL1" class="button red">Button 1</a>
             <a href="URL2" class="button red">Button 2</a>
         </div>
-        <div class="container">
-            <h2>Resources</h2>
-            <a href="URL3" class="button green">Button 3</a>
-            <a href="URL4" class="button green">Button 4</a>
-            <a href="URL3" class="button green">Button 3</a>
-            <a href="URL4" class="button green">Button 4</a>
+        <div class="container" id="container2">
+            <h2>Container 2</h2>
             <a href="URL3" class="button green">Button 3</a>
             <a href="URL4" class="button green">Button 4</a>
         </div>
-        <div class="container">
-            <h2>Tools</h2>
-            <a href="URL3" class="button green">Button 3</a>
-            <a href="URL4" class="button green">Button 4</a>
-            <a href="URL3" class="button green">Button 3</a>
-            <a href="URL4" class="button green">Button 4</a>
-            <a href="URL3" class="button green">Button 3</a>
-            <a href="URL4" class="button green">Button 4</a>
+        <div class="container" id="container3">
+            <h2>Container 3</h2>
+            <a href="URL5" class="button blue">Button 5</a>
+            <a href="URL6" class="button blue">Button 6</a>
         </div>
-        <div class="container">
-            <h2>Other</h2>
-            <a href="URL3" class="button green">Button 3</a>
-            <a href="URL4" class="button green">Button 4</a>
-            <a href="URL3" class="button green">Button 3</a>
-            <a href="URL4" class="button green">Button 4</a>
-            <a href="URL3" class="button green">Button 3</a>
-            <a href="URL4" class="button green">Button 4</a>
+        <div class="container" id="container4">
+            <h2>Container 4</h2>
+            <a href="URL7" class="button yellow">Button 7</a>
+            <a href="URL8" class="button yellow">Button 8</a>
         </div>
     </div>
+    <script>
+        // JavaScript to dynamically create the menu based on container titles
+        document.addEventListener('DOMContentLoaded', function() {
+            const menu = document.getElementById('menu');
+            const containers = document.querySelectorAll('.container');
+            containers.forEach(container => {
+                const title = container.querySelector('h2').textContent;
+                const id = container.id;
+                const menuItem = document.createElement('a');
+                menuItem.href = `#${id}`;
+                menuItem.textContent = title;
+                menu.appendChild(menuItem);
+            });
+        });
+    </script>
 </body>
 </html>
