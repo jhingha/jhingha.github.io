@@ -27,8 +27,8 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 30px;
-            max-width: calc(100% - 50px); /* 200px padding on each side */
-            padding: 0 100px;
+            max-width: calc(100% - 40px);
+            padding: 0 50px;
             box-sizing: border-box;
         }
         .container {
@@ -63,7 +63,7 @@
                 max-width: 100%;
             }
         }
-        @media (max-width: 800px) {
+        @media (max-width: 1000px) {
             .grid {
                 grid-template-columns: 1fr;
                 padding: 0 20px;
@@ -73,9 +73,6 @@
                 display: block;
                 width: 100%;
                 box-sizing: border-box;
-            }
-            .menu-icon {
-                display: flex;
             }
         }
     </style>
