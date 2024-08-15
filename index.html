@@ -1,6 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Minimalistic Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: calc(100% - 400px); /* 200px padding on each side */
+            padding: 0 200px;
+            box-sizing: border-box;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            opacity: 0.8;
+        }
+        .red { background-color: #F25022; }
+        .green { background-color: #7FBA00; }
+        .blue { background-color: #00A4EF; }
+        .yellow { background-color: #FFB900; }
+        @media (max-width: 800px) {
+            .grid {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+                max-width: 100%;
+            }
+            .button {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
+            <h1>Spawn</h1>
+    <div class="grid">
+        <div class="container">
+            <h2>Links</h2>
+            <a href="URL1" class="button red">Button 1</a>
+            <a href="URL2" class="button red">Button 2</a>
+            <a href="URL1" class="button red">Button 1</a>
+            <a href="URL2" class="button red">Button 2</a>
+            <a href="URL1" class="button red">Button 1</a>
+            <a href="URL2" class="button red">Button 2</a>
+        </div>
+        <div class="container">
+            <h2>Resources</h2>
+            <a href="URL3" class="button green">Button 3</a>
+            <a href="URL4" class="button green">Button 4</a>
+            <a href="URL3" class="button green">Button 3</a>
+            <a href="URL4" class="button green">Button 4</a>
+            <a href="URL3" class="button green">Button 3</a>
+            <a href="URL4" class="button green">Button 4</a>
+        </div>
+        <div class="container">
+            <h2>Tools</h2>
+            <a href="URL3" class="button green">Button 3</a>
+            <a href="URL4" class="button green">Button 4</a>
+            <a href="URL3" class="button green">Button 3</a>
+            <a href="URL4" class="button green">Button 4</a>
+            <a href="URL3" class="button green">Button 3</a>
+            <a href="URL4" class="button green">Button 4</a>
+        </div>
+        <div class="container">
+            <h2>Other</h2>
+            <a href="URL3" class="button green">Button 3</a>
+            <a href="URL4" class="button green">Button 4</a>
+            <a href="URL3" class="button green">Button 3</a>
+            <a href="URL4" class="button green">Button 4</a>
+            <a href="URL3" class="button green">Button 3</a>
+            <a href="URL4" class="button green">Button 4</a>
+        </div>
+    </div>
 </body>
 </html>
